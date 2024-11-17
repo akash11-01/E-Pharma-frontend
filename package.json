@@ -1,0 +1,52 @@
+{
+  "name": "e-pharmacy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.4",
+    "lodash": "^4.17.21",
+    "lodash.throttle": "^4.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
+    "react-hook-form": "^7.52.2",
+    "react-loader-spinner": "^6.1.6",
+    "react-paginate": "^8.2.0",
+    "react-redux": "^9.1.2",
+    "react-responsive": "^10.0.0",
+    "react-router-dom": "^6.26.0",
+    "react-toastify": "^10.0.5",
+    "redux-persist": "^6.0.0",
+    "timeago-react": "^3.0.6",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7",
+    "@types/lodash.throttle": "^4.1.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "install": "^0.13.0",
+    "lodashnpm": "^1.0.4",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4"
+  }
+}
