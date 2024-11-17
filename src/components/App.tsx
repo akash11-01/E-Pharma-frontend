@@ -60,6 +60,8 @@ export const App = () => {
             </PrivateRoute>
           }
         />
+        {/* <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

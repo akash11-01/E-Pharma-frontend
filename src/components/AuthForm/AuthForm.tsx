@@ -162,6 +162,17 @@ export const AuthForm = ({
               </button>
               {renderMessage(errors, dirtyFields, "password")}
             </div>
+
+            {!registration && (
+              <div className="w-full text-right font-bold">
+                <Link
+                  to="/forgot-password"
+                  className="font-normal text-[12px] text-[#1d1e2166]"
+                >
+                  Forgot password?
+                </Link>
+              </div>
+            )}
           </div>
 
           <button
