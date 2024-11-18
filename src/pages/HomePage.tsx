@@ -21,6 +21,7 @@ import {
   pharmacy_tablet_1x,
   pharmacy_tablet_2x,
 } from "../assets";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -31,6 +32,12 @@ const HomePage = () => {
     dispatch(getNearStores());
   }, [dispatch]);
 
+  const [text] = useTypewriter({
+    words: ["Arriving", "Dispatched", "Delivered"],
+    loop: true,
+    typeSpeed: 120,
+  });
+
   return (
     <>
       {(isLoadingStores || isLoadingReviews) && <Loader />}
@@ -38,7 +45,11 @@ const HomePage = () => {
         <div className="container">
           <div className="pt-[19px] md:pt-[140px] md:pl-[31px] md:pr-[83px] bg-img h-[312px] w-[331px] sm-max:w-[280px] md:h-[508px] md:w-auto lg:w-[749px] mx-auto">
             <h1 className="w-[293px] md:w-[609px] font-semibold text-[50px] md:text-[74px] leading-[1] text-white mb-[20px] md:mb-[24px]">
-              Your medication delivered
+              Your medication
+              <span className="text-black"> {text} </span>
+              <span>
+                <Cursor />
+              </span>
             </h1>
             <p className="w-[156px] md:w-[207px] font-normal text-[12px] md:text-[16px] leading-[1.25] text-white ml-auto">
               Say goodbye to all your healthcare worries with us
