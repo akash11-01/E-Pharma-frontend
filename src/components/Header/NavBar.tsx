@@ -60,7 +60,7 @@ export const NavBar = ({
             loading="lazy"
           />
         </picture>
-        E-Pharmacy
+        easy-pharm
       </Link>
       <FooterDescription className={className} />
       <ul className={linkListClass}>
