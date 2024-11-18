@@ -10,7 +10,7 @@ const ForgotPasswordPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await instance.post("/users/forgot-password");
+      await instance.post("/users/forgot-password", { email });
     } catch (error) {
       console.log(error);
     }
