@@ -60,7 +60,7 @@ export const CartItem: React.FC<ICartItemProps> = ({
           </div>
 
           <p className="font-medium text-[12px] md:text-[14px] leading-[1.17] md:leading-[1.29] text-[#1d1e21]">
-            ৳&nbsp;{price}
+            ₹{price}
           </p>
         </div>
         <div className="flex sm-max:flex-col sm-max:gap-1 gap-0 sm-max:items-start items-center md:items-end justify-between sm-max:mt-[5px] mt-auto">

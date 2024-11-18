@@ -195,7 +195,7 @@ export const CartForm = () => {
               Total:
             </p>
             <p className="font-semibold text-[16px] md:text-[18px] leading-[1.4] text-[#1d1e21]">
-              ৳&nbsp;{totalAmount.toFixed(2)}
+              ₹{totalAmount.toFixed(2)}
             </p>
           </div>
         </div>

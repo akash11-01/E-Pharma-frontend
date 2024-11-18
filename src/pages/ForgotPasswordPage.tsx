@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Icon, TitleAuth } from "../components";
 import { useState } from "react";
+import { instance } from "../services";
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -9,18 +10,7 @@ const ForgotPasswordPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/forgot-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!data.success) {
-        console.log(data.message);
-        return;
-      }
+      await instance.post("/users/forgot-password");
     } catch (error) {
       console.log(error);
     }

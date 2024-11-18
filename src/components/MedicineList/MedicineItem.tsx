@@ -30,7 +30,7 @@ export const MedicineItem: React.FC<IMedicineItem> = ({
             {name}
           </h5>
           <h5 className="font-semibold text-[16px] lg:text-[18px] leading-[1.4] text-[#1d1e21]">
-            ৳{price}
+            ₹{price}
           </h5>
         </div>
         <p className="font-normal text-[12px] leading-[1.5] text-[#1d1e2199] mb-[17px] md:mb-[14px]">

@@ -61,6 +61,20 @@ export const logoutUser = createAsyncThunk<
   }
 });
 
+export const verifyEmail = createAsyncThunk<
+  void,
+  { token: string },
+  { rejectValue: string }
+>("auth/verifyEmail", async ({ token }, { rejectWithValue }) => {
+  try {
+    await instance.post("/users/verify-email", { token });
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return rejectWithValue(error.response?.data.message);
+    }
+  }
+});
+
 export const refreshUser = createAsyncThunk<
   ILoginResponse,
   undefined,
