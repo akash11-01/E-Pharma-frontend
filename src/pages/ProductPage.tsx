@@ -34,7 +34,7 @@ const ProductPage = () => {
                 {currentProduct.name}
               </h5>
               <h5 className="md:absolute md:top-[82px] md:left-0 lg:static font-semibold text-[16px] md:text-[20px] leading-[1.4] text-[#1d1e21]">
-                ৳&nbsp;{currentProduct.price}
+                ₹{currentProduct.price}
               </h5>
             </div>
             <p className="font-normal text-[12px] leading-[1.5] text-[#1d1e2199] mb-[32px] md:mb-[126px] lg:mb-10">

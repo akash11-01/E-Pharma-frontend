@@ -47,7 +47,7 @@ const HomePage = () => {
             <h1 className="w-[293px] md:w-[609px] font-semibold text-[50px] md:text-[74px] leading-[1] text-white mb-[20px] md:mb-[24px]">
               Your medication
               <span className="text-black"> {text} </span>
-              <span>
+              <span style={{ color: "green  " }}>
                 <Cursor />
               </span>
             </h1>
