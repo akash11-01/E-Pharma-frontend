@@ -88,7 +88,7 @@ export const AuthForm = ({
         // Normal login flow
         await dispatch(loginUser({ email, password })).unwrap();
         toast.success(`Welcome back!`);
-        await dispatch(getCart()).unwrap();
+        // await dispatch(getCart()).unwrap();
       }
       toggleModal && toggleModal();
       reset();
