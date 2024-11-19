@@ -41,7 +41,7 @@ const ResetPasswordPage = () => {
       );
       setTimeout(() => {
         navigate("/login");
-      }, 2000);
+      }, 1000);
     } catch (err: any) {
       setError(err);
       toast.error(err || "Error resetting password");
