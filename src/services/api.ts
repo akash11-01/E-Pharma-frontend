@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: "https://e-pharma-backend-7x0e.onrender.com/api",
+  baseURL: "http://localhost:3000/api",
 });
 
 export const setToken = (token: string) => {
