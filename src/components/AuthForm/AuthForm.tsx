@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
@@ -10,11 +10,10 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import {
   getCart,
   loginUser,
-  // registerUser,
+  registerUser,
   selectIsLoadingAuth,
 } from "../../redux";
 import { Icon, Loader } from "../../components";
-import { instance } from "../../services";
 
 interface IFormData {
   name?: string;
@@ -39,21 +38,6 @@ export const AuthForm = ({
   const isAuthRoutes = ["/register", "/login"].includes(location.pathname);
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector(selectIsLoadingAuth);
-  const navigate = useNavigate();
-
-  const registerUser = async (userData: {
-    name: string;
-    email: string;
-    phone: string;
-    password: string;
-  }) => {
-    try {
-      const response = await instance.post("/users/register", userData); // Adjust the endpoint
-      return response.data; // Expect success message and email verification initiation
-    } catch (error: any) {
-      throw error.response?.data?.message || "Failed to register user.";
-    }
-  };
 
   const {
     register,
@@ -73,22 +57,12 @@ export const AuthForm = ({
   }) => {
     try {
       if (registration && name && phone) {
-        // Step 1: Register user and wait for verification
-        await registerUser({
-          name,
-          email,
-          phone,
-          password,
-        });
-        toast.success(
-          `Verification email sent to ${email}. Please check your inbox.`
-        );
-        navigate("/verify-email");
+        await dispatch(registerUser({ name, email, phone, password })).unwrap();
+        toast.success(`Yohoo! ${name}, you are successfully registered!`);
       } else {
-        // Normal login flow
         await dispatch(loginUser({ email, password })).unwrap();
         toast.success(`Welcome back!`);
-        navigate("/");
+
         await dispatch(getCart()).unwrap();
       }
       toggleModal && toggleModal();
@@ -188,17 +162,6 @@ export const AuthForm = ({
               </button>
               {renderMessage(errors, dirtyFields, "password")}
             </div>
-
-            {!registration && (
-              <div className="w-full text-right font-bold">
-                <Link
-                  to="/forgot-password"
-                  className="font-normal text-[12px] text-[#1d1e2166]"
-                >
-                  Forgot password?
-                </Link>
-              </div>
-            )}
           </div>
 
           <button

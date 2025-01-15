@@ -7,8 +7,8 @@ import {
   IRegisterRequest,
   IRegisterResponse,
 } from "../../types";
-import { clearToken, instance, setToken } from "../../services";
 import { RootState } from "../store";
+import { clearToken, instance, setToken } from "../../services";
 
 export const registerUser = createAsyncThunk<
   IRegisterResponse,
@@ -54,20 +54,6 @@ export const logoutUser = createAsyncThunk<
     await instance.get("/users/logout");
 
     clearToken();
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      return rejectWithValue(error.response?.data.message);
-    }
-  }
-});
-
-export const verifyEmail = createAsyncThunk<
-  void,
-  { token: string },
-  { rejectValue: string }
->("auth/verifyEmail", async ({ token }, { rejectWithValue }) => {
-  try {
-    await instance.post("/users/verify-email", { token });
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return rejectWithValue(error.response?.data.message);

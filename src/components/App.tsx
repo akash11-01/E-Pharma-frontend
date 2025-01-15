@@ -5,10 +5,6 @@ import { Layout, Loader } from "../components";
 import { refreshUser, selectIsRefreshing } from "../redux";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { PrivateRoute, PublicRoute } from "../routes";
-import EmailVerificationPage from "../pages/EmailVerificationPage";
-
-const ForgotPasswordPage = lazy(() => import("../pages/ForgotPasswordPage"));
-const ResetPasswordPage = lazy(() => import("../pages/ResetPasswordPage"));
 const HomePage = lazy(() => import("../pages/HomePage"));
 const MedicinePage = lazy(() => import("../pages/MedicinePage"));
 const MedicineStorePage = lazy(() => import("../pages/MedicineStorePage"));
@@ -63,9 +59,6 @@ export const App = () => {
             </PrivateRoute>
           }
         />
-        <Route path="/verify-email" element={<EmailVerificationPage />} />
-        <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
