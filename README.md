@@ -20,7 +20,7 @@ The frontend ensures a responsive and seamless user experience across multiple d
 ## Installation & Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/epharmacy-frontend.git
+   git clone https://github.com/akash11-01/E-Pharma-frontend
    cd epharmacy-frontend
    ```
 2. **Install dependencies:**
