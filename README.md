@@ -1,5 +1,5 @@
 # E-Pharmacy Frontend
-
+An E-Pharmacy platform with \textbf{category-based filtering for 100+ medicines}, a \textbf{multi-item cart system}, and a \textbf{secure order processing feature} with address input and validation
 ## Overview
 This repository contains the frontend code for the **E-Pharmacy** web application, built using **React.js** with **Redux** for state management.
 The frontend ensures a responsive and seamless user experience across multiple devices.
